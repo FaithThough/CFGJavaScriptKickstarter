@@ -49,6 +49,7 @@ const conversion2 = gbp2 * gbp2eur;
 console.log(conversion2 + " euros 🫰🏽");
 */
 
+/*
 // Lesson 2
 // // Attempting to reassign a const value
 // const message = "hello";
@@ -130,3 +131,102 @@ function sum(number1, number2) {
 
 sum(1, 2); // without 'return' keyword - nothing return
 console.log(sum(1, 2)); //  without 'return' keyword undefined return
+*/
+
+//Lesson 3
+
+let fruit = ["apple", "plum", "cherry", "mango", "kiwi", "banana", "peach"];
+console.log(fruit[0]);
+console.log(fruit[1]);
+console.log(fruit[2]);
+console.log(fruit[3]);
+console.log(fruit[4]);
+console.log(fruit[5]);
+console.log(fruit[6]);
+console.log(fruit);
+console.log(fruit.length);
+
+let findFruit = fruit.includes("apple");
+console.log(findFruit);
+
+findFruit = fruit.indexOf("plum");
+console.log(findFruit);
+
+let itemToFind = "strawberry";
+if (fruit.includes(itemToFind)) {
+  console.log(`${itemToFind} is in the array.`);
+} else {
+  console.log(`${itemToFind} is not in the array.`);
+}
+
+console.log(fruit);
+//Add avocado to the end of the list
+fruit.push("avocado");
+console.log(fruit);
+
+//Avocado is not a fruit, let's remove it
+fruit.pop();
+console.log(fruit);
+
+//Let's add something else
+fruit.push("strawberry", "guava");
+console.log(fruit);
+
+//Using .splice to remove multiple items from an array
+fruit.splice(1, 2); // The first argument is the starting index, and the second argument is the number of items to remove
+console.log(fruit); // Output: ["apple","mango","kiwi","banana","peach","strawberry","guava"]
+
+// let addItem = prompt("Which fruit would you like to add to your list?")
+
+// fruit.push(addItem);
+// console.log(fruit);
+
+const aCinderellaStory = {
+  title: "A Cinderella Story",
+  mainActors: ["Hillary Duff", "Chad Michael Murray"],
+  director: "Mark Rosman",
+  quote: "never let the fear of striking out keep you from playing the game.",
+  year: 2004,
+};
+
+console.log(aCinderellaStory.title);
+console.log(aCinderellaStory.mainActors[0]);
+console.log(aCinderellaStory.mainActors[1]);
+console.log(aCinderellaStory.director);
+console.log(aCinderellaStory.quote);
+console.log(aCinderellaStory.year);
+
+//Calling multiple at once
+//Concatenation
+console.log(aCinderellaStory.title + ", " + aCinderellaStory.year);
+
+//Interpolotion
+console.log(`${aCinderellaStory.mainActors}, ${aCinderellaStory.quote}`);
+
+//Nested objects
+let woman = {
+  name: "Faith",
+  age: 26,
+  friends: ["Lauren", "Mabel", "Chloe"],
+  address: {
+    houseNumber: 1,
+    street: "Main Street",
+    city: "York",
+  },
+};
+
+console.log(woman.address.houseNumber);
+console.log(woman.friends[0]);
+
+//For loops
+for (let counter = 1; counter <= 10; counter++) {
+  console.log(counter);
+}
+
+//Code broken
+// for (let index = 0; index < fruit.length; index++) {
+//   fruit.pop();
+//   console.log(fruit);
+// }
+
+//Lesson 4
