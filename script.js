@@ -133,7 +133,7 @@ sum(1, 2); // without 'return' keyword - nothing return
 console.log(sum(1, 2)); //  without 'return' keyword undefined return
 */
 
-//Lesson 3
+/*Lesson 3
 
 let fruit = ["apple", "plum", "cherry", "mango", "kiwi", "banana", "peach"];
 console.log(fruit[0]);
@@ -228,5 +228,32 @@ for (let counter = 1; counter <= 10; counter++) {
 //   fruit.pop();
 //   console.log(fruit);
 // }
+*/
 
 //Lesson 4
+document.write("Hello world👋");
+
+// Get the text content of the HTML element with the id "studying"
+const value = document.getElementById("studying").textContent;
+
+// Initialize an empty string to store the result
+let result = " ";
+
+// Start a loop that runs 10 times
+for (let i = 0; i <= 10; i++) {
+  // Concatenate the original text content with a space and the current value of 'i'
+  result += value + " " + i;
+}
+
+// Update the text content of the HTML element with the id "studying" to the 'result' string
+document.getElementById("studying").textContent = result;
+
+//Creating a new paragraph element
+let paragraph = document.createElement("p");
+
+//Setting the text content of the paragraph
+paragraph.textContent =
+  "Hello again! I was added by using document.createElement()!";
+
+//Append the paragraph to the body
+document.body.appendChild(paragraph);

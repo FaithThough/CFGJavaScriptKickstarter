@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog to Human Age Converter🚶🐶</title>
+    <link rel="stylesheet" type="text/css" href="webapp.css" />
+  </head>
+  <body>
+    <h1>Dog to Human Age Converter🚶🐶</h1>
+    <p>Have you ever wondered how old your dog is in human years?</p>
+    <p>
+      The commonly cited "1 year for every 7 dog years" is a rough estimate and
+      doesn't accurately represent the aging process for all dogs. Use this easy
+      converter to find out!
+    </p>
+
+    <form id="ageConverterForm">
+      <label for="dogYears">Enter your dog's age in dog years:</label>
+      <input type="number" id="dogYears" name="dogYears" required />
+
+      <label for="dogSize">Select your dog's size:</label>
+      <select id="dogSize" name="dogSize" required>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+
+      <button type="button" id="convertButton">Convert</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="webapp.js"></script>
+  </body>
+</html>

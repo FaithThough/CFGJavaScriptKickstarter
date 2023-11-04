@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Mood Explorer🧳</title>
+    <link rel="stylesheet" type="text/css" href="assignment4.css" />
+  </head>
+  <body>
+    <h1>Travel Mood Explorer🧳</h1>
+    <p>Help discover you next travel destination based upon your mood!</p>
+    <p>
+      Input your current mood and we'll suggest travel destinations to match how
+      you're feeling.
+    </p>
+
+    <form id="moodSelectorForm">
+      <label for="currentMood">Select your current mood: </label>
+      <select id="currentMood" name="currentMood" required>
+        <option value="Relaxed">Relaxed</option>
+        <option value="Adventure Seeker">Adventure Seeker</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Foodie">Foodie</option>
+        <option value="Cultural Enthusiast">Cultural Enthusiast</option>
+      </select>
+
+      <button
+        id="inspireMeButton"
+        onclick="getRecommendation(event)"
+        onmouseover="showEmoji()"
+        onmouseout="hideEmoji()"
+      >
+        Inspire me
+      </button>
+      <span id="planeEmoji" style="display: none">✈️</span>
+
+      <div id="destinationRecommendation"></div>
+    </form>
+
+    <div id="result"></div>
+    <script>
+      function getRecommendation() {
+        const currentMood = document.getElementById("currentMood").value;
+
+        const recommendation = suggestDestination(currentMood);
+
+        document.getElementById("destinationRecommendation").textContent =
+          recommendation;
+      }
+    </script>
+    <script src="assignment4.js"></script>
+  </body>
+</html>
