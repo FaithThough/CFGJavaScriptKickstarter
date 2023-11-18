@@ -1,0 +1,66 @@
+<!-- Declare the document type and specify the language as English -->
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head section contains metadata and links to external resources -->
+  <head>
+    <!-- Specify character set for the document -->
+    <meta charset="UTF-8" />
+    <!-- Set the viewport properties for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the title of the HTML document -->
+    <title>Relaxation Timer</title>
+    <!-- Link to an external stylesheet for styling -->
+    <link rel="stylesheet" href="project.css" />
+  </head>
+
+  <!-- Body section contains the main content of the HTML document -->
+  <body>
+    <!-- Container div to group and style content -->
+    <div class="container">
+      <!-- Top-level heading with the id "headline" for potential styling or scripting -->
+      <h1 id="headline">Relaxation Timer</h1>
+
+      <!-- Paragraph providing information about the relaxation timer web app -->
+      <p>
+        Take a moment out of your busy day to prioritise your well-being. Our
+        web app allows you to choose a time that suits you for a guided
+        relaxation session. Embrace the opportunity to unwind, de-stress, and
+        recharge. Set your preferred time, click "Start Timer," and enjoy a
+        moment of tranquility.
+      </p>
+
+      <!-- Label for an input element with the id "inputTime" -->
+      <label for="inputTime">Set the timer for:</label>
+      <!-- Input field for users to enter the desired time for the relaxation timer -->
+      <input type="number" id="inputTime" placeholder="Minutes" />
+
+      <!-- Container div for grouping and styling the "Start Timer" and "Clear Timer" buttons -->
+      <div id="buttonContainer">
+        <!-- Button to start the relaxation timer, calling the "startTimer()" function -->
+        <button onclick="startTimer()">Start Timer</button>
+        <!-- Button to clear the relaxation timer, calling the "clearTimer()" function -->
+        <button onclick="clearTimer()">Clear Timer</button>
+      </div>
+
+      <!-- Div to display the countdown, initially hidden -->
+      <div id="countdown" style="display: none">
+        <!-- Unordered list to display minutes and seconds of the countdown -->
+        <ul>
+          <!-- List item for minutes with a span element for dynamic content -->
+          <li><span id="minutes">00</span>Minutes</li>
+          <!-- List item for seconds with a span element for dynamic content -->
+          <li><span id="seconds">00</span>Seconds</li>
+        </ul>
+      </div>
+
+      <!-- Div to display content after the timer completes, initially hidden -->
+      <div id="content" style="display: none">
+        <!-- Content to display after the timer completes -->
+        <p>Relaxation time complete!</p>
+      </div>
+    </div>
+
+    <!-- Link to an external JavaScript file for the timer functionality -->
+    <script src="project.js"></script>
+  </body>
+</html>
