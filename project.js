@@ -62,6 +62,7 @@ function startTimer() {
         "Relaxation time complete";
       document.getElementById("countdown").style.display = "none";
       document.getElementById("content").style.display = "block";
+      alert("Relaxation time complete!");
       clearInterval(intervalId); // Clear the interval
       // Set isTimerRunning back to false when the timer completes
       isTimerRunning = false;
@@ -99,9 +100,12 @@ function surpriseMe() {
   // Maxiumum time is ten minutes
   const max = 10;
   const randomInteger = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(randomInteger);
+  // Log the random time to the console
+  console.log(
+    `'Surprise me' button clicked. Random time generated: ${randomInteger} minutes`
+  );
   //The user is informed of the random integer generated
-  alert(`The random time generated is ${randomInteger} minutes`);
+  alert(`The time generated is ${randomInteger} minutes`);
   // The input value is set to the random time
   document.getElementById("inputTime").value = randomInteger;
   //The timer is immediately started
@@ -131,13 +135,14 @@ const mindfulnessActivities = [
   "Expressing self-compassion and self-love",
 ];
 
-function getRecommendation(event) {
-  event.preventDefault(); // Prevent form submission and page reload
+function getRecommendation() {
   const recommendationIndex = Math.floor(
     Math.random() * mindfulnessActivities.length
   );
   const recommendation = mindfulnessActivities[recommendationIndex];
-  document.getElementById("result").textContent = recommendation;
+  const resultBox = document.getElementById("result");
+
+  // Set the recommendation and remove the 'hidden' class
+  resultBox.textContent = recommendation;
+  resultBox.classList.remove("hidden");
 }
-const button = document.getElementById("inspireMeButton");
-button.addEventListener("click", getRecommendation);

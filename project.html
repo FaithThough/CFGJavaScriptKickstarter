@@ -16,7 +16,6 @@
   <!-- Body section contains the main content of the HTML document -->
   <body>
     <!-- Container div to group and style content -->
-    <!-- Container div to group and style content -->
     <div class="container">
       <!-- Top-level heading with the id "headline" for potential styling or scripting -->
       <h1 id="headline">Relaxation Timer</h1>
@@ -41,6 +40,7 @@
         <button onclick="startTimer()">Start Timer</button>
         <!-- Button to clear the relaxation timer, calling the "clearTimer()" function -->
         <button onclick="clearTimer()">Clear Timer</button>
+        <!-- Button to surprise the user, calling the "surpriseMe()" function -->
         <button onclick="surpriseMe()">Surprise me</button>
       </div>
 
@@ -61,11 +61,14 @@
         <p>Relaxation time complete!</p>
       </div>
 
+      <!-- Additional content -->
       <h1>Unsure of what to do during your relaxation time?</h1>
 
-      <button id="inspireMeButton">Inspire me</button>
-      <p id="result"></p>
-    </div>
+<!-- Button to inspire the user, calling the "getRecommendation()" function -->
+<button id="inspireMeButton" onclick="getRecommendation()">Inspire me</button>
+<!-- Paragraph to display the result of the inspiration -->
+<div id="result" class="hidden"></div>
+
 
     <!-- Link to an external JavaScript file for the timer functionality -->
     <script src="project.js"></script>

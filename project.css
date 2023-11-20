@@ -117,3 +117,17 @@ li span {
     font-size: calc(3.375rem * var(--smaller));
   }
 }
+
+#result {
+  background-color: #fff;
+  border: 1px solid #555;
+  padding: 10px;
+  margin: 20px auto;
+  width: 300px;
+  text-align: center;
+}
+
+/* Add a class for styling the result box when it's hidden */
+#result.hidden {
+  display: none;
+}
