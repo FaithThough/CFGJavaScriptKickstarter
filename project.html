@@ -16,6 +16,7 @@
   <!-- Body section contains the main content of the HTML document -->
   <body>
     <!-- Container div to group and style content -->
+    <!-- Container div to group and style content -->
     <div class="container">
       <!-- Top-level heading with the id "headline" for potential styling or scripting -->
       <h1 id="headline">Relaxation Timer</h1>
@@ -34,12 +35,13 @@
       <!-- Input field for users to enter the desired time for the relaxation timer -->
       <input type="number" id="inputTime" placeholder="Minutes" />
 
-      <!-- Container div for grouping and styling the "Start Timer" and "Clear Timer" buttons -->
+      <!-- Container div for grouping and styling the "Start Timer", "Clear Timer" and "Surprise me" buttons -->
       <div id="buttonContainer">
         <!-- Button to start the relaxation timer, calling the "startTimer()" function -->
         <button onclick="startTimer()">Start Timer</button>
         <!-- Button to clear the relaxation timer, calling the "clearTimer()" function -->
         <button onclick="clearTimer()">Clear Timer</button>
+        <button onclick="surpriseMe()">Surprise me</button>
       </div>
 
       <!-- Div to display the countdown, initially hidden -->
@@ -58,6 +60,8 @@
         <!-- Content to display after the timer completes -->
         <p>Relaxation time complete!</p>
       </div>
+
+      <h1>Unsure of what to do during your relaxation time?</h1>
     </div>
 
     <!-- Link to an external JavaScript file for the timer functionality -->
