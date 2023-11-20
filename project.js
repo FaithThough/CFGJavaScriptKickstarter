@@ -107,3 +107,37 @@ function surpriseMe() {
   //The timer is immediately started
   startTimer();
 }
+
+const mindfulnessActivities = [
+  "Deep breathing exercises",
+  "Mindful walking in nature",
+  "Body scan meditation",
+  "Visualization meditation",
+  "Journaling about gratitude",
+  "Mindful eating",
+  "Guided meditation",
+  "Listening to calming music",
+  "Mindful stretching or yoga",
+  "Focusing on the breath for a few minutes",
+  "Observing and describing your surroundings",
+  "Savoring a cup of tea or coffee mindfully",
+  "Creating a small art or craft project",
+  "Mindful shower or bath",
+  "Five senses mindfulness exercise",
+  "Mindful phone detox (disconnect for a while)",
+  "Mindful colouring or doodling",
+  "Sending positive messages to loved ones",
+  "Mindful awareness of thoughts and emotions",
+  "Expressing self-compassion and self-love",
+];
+
+function getRecommendation(event) {
+  event.preventDefault(); // Prevent form submission and page reload
+  const recommendationIndex = Math.floor(
+    Math.random() * mindfulnessActivities.length
+  );
+  const recommendation = mindfulnessActivities[recommendationIndex];
+  document.getElementById("result").textContent = recommendation;
+}
+const button = document.getElementById("inspireMeButton");
+button.addEventListener("click", getRecommendation);
