@@ -29,7 +29,7 @@ body {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 2rem; /* Adjust the font size to your preference */
   font-weight: normal;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
@@ -58,7 +58,7 @@ input {
 }
 
 #buttonContainer {
-  margin-left: 10px; /* Add space between input and buttons */
+  margin-left: 10px;
 }
 
 button {
@@ -68,7 +68,7 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
-  margin-top: 5px; /* Add some space between the buttons */
+  margin-top: 5px;
 }
 
 button:hover {
@@ -100,34 +100,19 @@ li span {
   margin-top: 20px;
 }
 
-@media all and (max-width: 768px) {
-  h1 {
-    font-size: calc(1.5rem * var(--smaller));
-  }
-
-  p {
-    font-size: 1em;
-  }
-
-  li {
-    font-size: calc(1.125rem * var(--smaller));
-  }
-
-  li span {
-    font-size: calc(3.375rem * var(--smaller));
-  }
-}
-
 #result {
   background-color: #fff;
-  border: 1px solid #555;
   padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin: 20px auto;
   width: 300px;
   text-align: center;
 }
 
-/* Add a class for styling the result box when it's hidden */
 #result.hidden {
   display: none;
+}
+#result.visible {
+  display: block;
 }
