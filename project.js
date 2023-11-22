@@ -82,7 +82,10 @@ function clearTimer() {
   // Reset the headline
   document.getElementById("headline").innerText = "Relaxation Timer";
   // Clear the input field
-  document.getElementById("inputTime").value = "";
+  document.getElementById("inputTime").value = " ";
+  //Clear the displayed minutes and seconds
+  document.getElementById("minutes").innerText = "00";
+  document.getElementById("seconds").innerText = "00";
 }
 
 //Function for the surprise me button
