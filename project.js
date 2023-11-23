@@ -1,3 +1,4 @@
+//Removing HTML element using DOM
 function fadeOut(h2Element) {
   // Set initial opacity if not already set
   if (!h2Element.style.opacity) {
@@ -207,3 +208,32 @@ function mouseOver() {
 function mouseOut() {
   document.getElementById("headline").style.color = "black";
 }
+
+// First set of functions for "headline"
+function mouseOver() {
+  document.getElementById("headline").style.color = "white";
+}
+
+function mouseOut() {
+  document.getElementById("headline").style.color = "black";
+}
+
+// Second set of functions for "headline 2"
+function mouseOverHeadline2() {
+  document.getElementById("headline 2").style.color = "white";
+}
+
+function mouseOutHeadline2() {
+  document.getElementById("headline 2").style.color = "black";
+}
+
+// Adding HTML element using DOM
+let paragraph = document.createElement("p");
+paragraph.textContent =
+  "Don't forget to take regular moments like this for yourself!🧘";
+
+// Get the container by its class name
+let container = document.querySelector(".container");
+
+// Append the new paragraph to the container
+container.appendChild(paragraph);
