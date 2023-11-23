@@ -138,6 +138,11 @@ const mindfulnessActivities = [
   "Expressing self-compassion and self-love",
 ];
 
+//Using a loop to iterate through values in a list
+for (let index = 0; index < mindfulnessActivities.length; index++) {
+  console.log(mindfulnessActivities[index]);
+}
+
 function getRecommendation() {
   const recommendationIndex = Math.floor(
     Math.random() * mindfulnessActivities.length
