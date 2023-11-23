@@ -18,7 +18,7 @@
     <!-- Container div to group and style content -->
     <div class="container">
       <!-- Top-level heading with the id "headline" for potential styling or scripting -->
-      <h1 id="headline">Relaxation Timer</h1>
+      <h1 id="headline" onmouseover="mouseOver()" onmouseout="mouseOut()">Relaxation Timer</h1>
 
       <!-- Paragraph providing information about the relaxation timer web app -->
       <p>
@@ -28,7 +28,10 @@
         recharge. Set your preferred time, click "Start Timer," and enjoy a
         moment of tranquility.
       </p>
-
+      
+<!-- Item to remove using DOM  -->
+      <h2 id="h2"> Take a nice deep breath, ready to unwind your stressful day </h2>
+      
       <!-- Label for an input element with the id "inputTime" -->
       <label for="inputTime">Set the timer for:</label>
       <!-- Input field for users to enter the desired time for the relaxation timer -->
@@ -65,7 +68,12 @@
       <h1>Unsure of what to do during your relaxation time?</h1>
 
 <!-- Button to inspire the user, calling the "getRecommendation()" function -->
-<button id="inspireMeButton" onclick="getRecommendation()">Inspire me</button>
+<button id="inspireMeButton" onclick="getRecommendation()"
+onmouseover="showEmoji()"
+onmouseout="hideEmoji()">Inspire me</button>
+      
+<script id="heartEmoji"
+      style="display: none;">💖</script>
 <!-- Paragraph to display the result of the inspiration -->
 <div id="result" class="hidden"></div>
 

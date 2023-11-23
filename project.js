@@ -1,3 +1,20 @@
+function fadeOut(h2Element) {
+  // Set initial opacity if not already set
+  if (!h2Element.style.opacity) {
+    h2Element.style.opacity = 1;
+  }
+
+  let interval = setInterval(function () {
+    let opacity = h2Element.style.opacity;
+    if (opacity >= 0.1) {
+      opacity -= 0.1;
+      h2Element.style.opacity = opacity;
+    } else {
+      clearInterval(interval);
+    }
+  }, 600);
+}
+
 // Declare a variable to store the interval ID for the timer
 let intervalId;
 
@@ -40,12 +57,15 @@ function startTimer() {
   // Display the countdown div
   document.getElementById("countdown").style.display = "block";
 
+  // Call the fadeOut function to start the fade-out effect
+  fadeOut(document.getElementById("h2"));
+
   // Set up an interval to update the timer every second
   intervalId = setInterval(function () {
     // Get the current time
     const now = new Date().getTime(),
       // Calculate the remaining time
-      distance = countDown - now;
+      distance = countDown - now + second;
 
     // Update the display with minutes and seconds
     document.getElementById("minutes").innerText = Math.floor(
@@ -66,8 +86,10 @@ function startTimer() {
       clearInterval(intervalId); // Clear the interval
       // Set isTimerRunning back to false when the timer completes
       isTimerRunning = false;
+      // Set the opacity of the h2 element back to 1
+      document.getElementById("h2").style.opacity = 1;
     }
-  }, 1000); // Update every second
+  }, 0); // Update every second
 }
 
 // Function to clear the relaxation timer
@@ -86,6 +108,8 @@ function clearTimer() {
   //Clear the displayed minutes and seconds
   document.getElementById("minutes").innerText = "00";
   document.getElementById("seconds").innerText = "00";
+  // Set the opacity of the h2 element back to 1
+  document.getElementById("h2").style.opacity = 1;
 }
 
 //Function for the surprise me button
@@ -143,6 +167,15 @@ for (let index = 0; index < mindfulnessActivities.length; index++) {
   console.log(mindfulnessActivities[index]);
 }
 
+//Using the shift method
+const shiftedMindfulnessActivities = mindfulnessActivities.shift();
+console.log(shiftedMindfulnessActivities); // "Deep breathing exercises" the removed element
+
+//Using the unshift method
+const unshiftedMindfulnessActivities =
+  mindfulnessActivities.unshift("EFT tapping");
+console.log(unshiftedMindfulnessActivities); // '20' the updated length of the array
+
 function getRecommendation() {
   const recommendationIndex = Math.floor(
     Math.random() * mindfulnessActivities.length
@@ -150,7 +183,27 @@ function getRecommendation() {
   const recommendation = mindfulnessActivities[recommendationIndex];
   const resultBox = document.getElementById("result");
 
-  // Set the recommendation and remove the 'hidden' class
+  //Set the recommendation and remove the 'hidden' class
   resultBox.textContent = recommendation;
   resultBox.classList.remove("hidden");
+}
+
+//onmouseover DOM event
+//Shows heart emoji when hovering over the inspire me button
+function showEmoji() {
+  document.getElementById("heartEmoji").style.display = "inline";
+}
+
+function hideEmoji() {
+  document.getElementById("heartEmoji").style.display = "none";
+}
+
+//onMouseover DOM event
+//Change color of heading
+function mouseOver() {
+  document.getElementById("headline").style.color = "white";
+}
+
+function mouseOut() {
+  document.getElementById("headline").style.color = "black";
 }
