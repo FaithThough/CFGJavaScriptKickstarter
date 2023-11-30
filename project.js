@@ -1,19 +1,28 @@
-//Removing HTML element using DOM
+// Function to fade out an HTML element using the DOM
 function fadeOut(h2Element) {
-  // Set initial opacity if not already set
+  // Check if the initial opacity is not already set
   if (!h2Element.style.opacity) {
+    // Set initial opacity to 1 if not already set
     h2Element.style.opacity = 1;
   }
 
+  // Set up an interval to gradually decrease the opacity
   let interval = setInterval(function () {
+    // Get the current opacity of the element
     let opacity = h2Element.style.opacity;
+
+    // Check if the opacity is greater than or equal to 0.1
     if (opacity >= 0.1) {
+      // Decrease the opacity by 0.1
       opacity -= 0.1;
+
+      // Update the element's opacity with the new value
       h2Element.style.opacity = opacity;
     } else {
+      // If the opacity is less than 0.1, clear the interval to stop the fading process
       clearInterval(interval);
     }
-  }, 600);
+  }, 600); // Interval set to 600 milliseconds (0.6 seconds)
 }
 
 // Declare a variable to store the interval ID for the timer
@@ -31,18 +40,25 @@ function startTimer() {
     );
     return;
   }
+
   // Set isTimerRunning to true to indicate that the timer is in progress
   isTimerRunning = true;
+
   // Get the user input for the timer duration
   const inputTime = document.getElementById("inputTime").value;
 
   // Check if the input is a valid positive number
   if (isNaN(inputTime) || inputTime <= 0) {
     alert("Please enter a valid positive number for the timer.");
+    // Set isTimerRunning back to false in case of an error
+    isTimerRunning = false;
     return;
   }
 
-  console.log(`Relaxation Timer started for ${inputTime} ${minutes}`); //
+  console.log(`Relaxation Timer started for ${inputTime} minutes`);
+
+  // Call the fadeOut function to start the fade-out effect
+  fadeOut(document.getElementById("h2"));
 
   // Define constants for time units in milliseconds
   const second = 1000,
@@ -57,9 +73,6 @@ function startTimer() {
 
   // Display the countdown div
   document.getElementById("countdown").style.display = "block";
-
-  // Call the fadeOut function to start the fade-out effect
-  fadeOut(document.getElementById("h2"));
 
   // Set up an interval to update the timer every second
   intervalId = setInterval(function () {
@@ -99,6 +112,10 @@ function clearTimer() {
   clearInterval(intervalId);
   // Set isTimerRunning back to false
   isTimerRunning = false;
+
+  // Set the opacity of the h2 element back to 1
+  document.getElementById("h2").style.opacity = 1;
+
   // Hide the countdown and content divs
   document.getElementById("countdown").style.display = "none";
   document.getElementById("content").style.display = "none";
@@ -211,20 +228,20 @@ function mouseOut() {
 
 // First set of functions for "headline"
 function mouseOver() {
-  document.getElementById("headline").style.color = "white";
+  document.getElementById("headline").style.color = "#555";
 }
 
 function mouseOut() {
-  document.getElementById("headline").style.color = "black";
+  document.getElementById("headline").style.color = "#333";
 }
 
 // Second set of functions for "headline 2"
 function mouseOverHeadline2() {
-  document.getElementById("headline 2").style.color = "white";
+  document.getElementById("headline 2").style.color = "#555";
 }
 
 function mouseOutHeadline2() {
-  document.getElementById("headline 2").style.color = "black";
+  document.getElementById("headline 2").style.color = "#333";
 }
 
 // Adding HTML element using DOM
